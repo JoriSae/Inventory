@@ -22,26 +22,13 @@ public class InventoryItemScript : MonoBehaviour, IPointerDownHandler, IPointerU
             case ItemState.itemDrag:
                 gameObject.transform.position = Input.mousePosition + offset;
                 Debug.Log("(Make invisible yo)");
-                Cursor.visible = false;
+                //Cursor.visible = false;
                 break;
             case ItemState.itemStationary:
                 Debug.Log("(Make visible yo)");
-                Cursor.visible = true;
+                //Cursor.visible = true;
                 break;
         }
-
-        if(itemState == ItemState.itemDrag)
-        {
-            gameObject.transform.position = Input.mousePosition + offset;
-            Debug.Log("(Make invisible yo)");
-            Cursor.visible = false;
-        }
-        else
-        {
-            Debug.Log("(Make visible yo)");
-            Cursor.visible = true;
-        }
-
     }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
